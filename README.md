@@ -1,7 +1,8 @@
 
 # Divi Developer Documentation
 
-A set of wordpress and divi functions/instruction to easily create divi extension
+A set of wordpress and divi functions/instruction to easily create divi extension. 
+I am not including installation guide for now and focusing only on divi settings.
 
 
 Three compulsory functions every module should have instruction
@@ -39,5 +40,30 @@ Initially there are three tabs, but we can add more.Let us briefly discuss about
 - Design Tab - All the design related toggles like css border,box-shadow,spacing,sizing goes under this tab. In the code it is known as ```advanced``` tab.
 - Advanced Tab - It is slight weird, divi named Design Tab as advanced in their code and then they named another tab to ```Advanced```.But in the code this toggle is known as ```custom_css``` as we can set all the custom css related toggle here.
 
+From now we will call those tabs as their code name.
+
+Now we will add three toggle. One in general tab, one in advance tab and one in custom_css tab.
+
+
+```php
+$this->settings_modal_toggles = array(
+    'general' => array(
+        'toggles' => array(
+            'content' => esc_html__('Content', 'TEXT_DOMAIN')
+        )
+    ),
+    'advanced' => array(
+        'toggles' => array(
+            'content_style' => esc_html__('Content Styles', 'TEXT_DOMAIN')
+        )
+    ),
+    'custom_css' => array(
+        'toggles' => array(
+            'custom_content' => esc_html__('Custom Content', 'TEXT_DOMAIN')
+        )
+    )
+);
+
+```
 
 ... maintainance 
